@@ -4,6 +4,8 @@
 
 ### Usage:
 
+After cloning the repository:
+
 ```
 pip install requirements.txt
 
