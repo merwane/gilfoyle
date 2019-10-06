@@ -47,7 +47,7 @@ def main():
     if float(BELLOW) < req_price():
         inc -= 1
 
-schedule.every(5).seconds.do(main)
+schedule.every(30).seconds.do(main)
 
 while True:
     schedule.run_pending()
