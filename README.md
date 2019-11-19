@@ -1,4 +1,4 @@
-# Gilfoyle's notifier when Bitcoin drops bellow a certain price.
+# Gilfoyle's notifier when a cryptocurrency drops bellow a certain price.
 
 > Oh that's the song **You suffer by Napalm Death.**
 
@@ -12,9 +12,11 @@ pip install requirements.txt
 python alert.py
 ```
 
-By keeping the worker on background, it should notify you whenever Bitcoin drops bellow a specific price.
+By keeping the worker on background, it should notify you whenever a cryptocurrency drops bellow a specific price.
 
 It also displays a banner for Mac users.
+
+**Supported cryptocurrencies:** BTC | BCH | ETH | LTC | ZEC 
 
 ### Donate
 

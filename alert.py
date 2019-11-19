@@ -12,7 +12,14 @@ def cls():
 
 cls()
 
-value = input("Enter the price you bought your Bitcoins in USD: ")
+coin = input("Select a cryptocurrency: BTC | BCH | ETH | LTC | ZEC ")
+if coin.upper() not in ["BTC", "BCH", "ETH", "LTC", "ZEC"]:
+    print("Cryptocurrency not supported.")
+    exit()
+
+cls()
+
+value = input("Enter the price you bought your "+coin.upper()+" in USD: ")
 
 cls()
 
@@ -25,8 +32,8 @@ song = AudioSegment.from_mp3('suffer.mp3')
 inc = 1
 
 def req_price():
-    r = requests.get('https://api.coindesk.com/v1/bpi/currentprice/USD.json')
-    return r.json()['bpi']['USD']['rate_float']
+    r = requests.get('https://api.coinbase.com/v2/exchange-rates?currency='+coin.upper())
+    return float(r.json()['data']['rates']['USD'])
 
 def alert(price):
     if price < float(BELLOW):
@@ -34,7 +41,7 @@ def alert(price):
         if sys.platform == 'darwin':
             os.system("""
                     osascript -e 'display notification "{}" with title "{}"'
-                    """.format("Current price: $"+str(price), "Bitcoin price dropped bellow $"+str(BELLOW)))
+                    """.format("Current price: $"+str(price), coin.upper()+" price dropped bellow $"+str(BELLOW)))
         play(song)
 
 def main():
