@@ -7,8 +7,9 @@ verify_ssl = true
 
 [packages]
 requests = "*"
-pydub = "*"
 schedule = "*"
+playsound = "*"
+pyobjc = "*"
 
 [requires]
 python_version = "3.6"

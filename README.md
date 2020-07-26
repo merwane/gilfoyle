@@ -1,4 +1,4 @@
-# Gilfoyle's notifier when a cryptocurrency drops bellow a certain price.
+# Gilfoyle's cryptocurrency price notifier
 
 > Oh that's the song **You suffer by Napalm Death.**
 
@@ -6,8 +6,14 @@
 
 After cloning the repository:
 
-```
-pip install requirements.txt
+```bash
+pip install -r requirements.txt
+
+# or
+
+pipenv install --skip-lock 
+
+# launch
 
 python alert.py
 ```
@@ -16,14 +22,12 @@ By keeping the worker on background, it should notify you whenever a cryptocurre
 
 It also displays a banner for Mac users.
 
-**Supported cryptocurrencies:** BTC | BCH | ETH | LTC | ZEC 
+**Supported cryptocurrencies:** BTC | ETH | BCH | LTC | ZEC | XRP | XLM
 
 ### Donate
 
-**Bitcoin:** 1HHMRuezg1WAPqGRQ3S8xFKGgmMHZZrCoa
+**Bitcoin:** 1FHXDkRLhoCziRjftaPB3fELUYrZomFanx
 
-**Bitcoin Cash:** qrxjktfjdse3ll0ttrll20gykuhqjw764queg3w2tj
-
-
+**Ether:** 0xa4722f1b4B552951828e6A334C5724b34B19A327
 
 <img src="gilf.gif">

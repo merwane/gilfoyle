@@ -1,8 +1,7 @@
 import requests
 import schedule
 import time
-from pydub import AudioSegment
-from pydub.playback import play
+from playsound import playsound
 import os
 import sys
 
@@ -12,8 +11,8 @@ def cls():
 
 cls()
 
-coin = input("Select a cryptocurrency: BTC | BCH | ETH | LTC | ZEC ")
-if coin.upper() not in ["BTC", "BCH", "ETH", "LTC", "ZEC"]:
+coin = input("Select a cryptocurrency: BTC | ETH | BCH | ZEC | LTC | XRP | XLM :   ")
+if coin.upper() not in ["BTC", "BCH", "ETH", "LTC", "ZEC", "XRP", "XLM"]:
     print("Cryptocurrency not supported.")
     exit()
 
@@ -23,11 +22,9 @@ value = input("Enter the price you bought your "+coin.upper()+" in USD: ")
 
 cls()
 
-print("Worker launched, you can leave it in background.")
+print("Notifier launched, you can leave it in background.")
 
 BELLOW = float(value)
-
-song = AudioSegment.from_mp3('suffer.mp3')
 
 inc = 1
 
@@ -42,7 +39,7 @@ def alert(price):
             os.system("""
                     osascript -e 'display notification "{}" with title "{}"'
                     """.format("Current price: $"+str(price), coin.upper()+" price dropped bellow $"+str(BELLOW)))
-        play(song)
+        playsound("./suffer.mp3")
 
 def main():
     global inc
